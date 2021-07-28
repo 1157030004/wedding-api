@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const wishRoute = require("./routes/wishes");
 
+const PORT = process.env.PORT || 5000;
+
 dotenv.config();
 app.use(express.json());
 
@@ -19,6 +21,6 @@ mongoose
 
 app.use("/api/wishes", wishRoute);
 
-app.listen("5000", () => {
+app.listen(PORT, () => {
 	console.log("Backend is running");
 });
